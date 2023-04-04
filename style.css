@@ -1,0 +1,142 @@
+body{
+    background-color: #0B2447;
+    font-family: 'Black Ops One', serif;
+    color:#A5D7E8;
+    text-align: center;
+    min-height: 100vh;  
+    display: flex;
+    flex-direction: column;
+}
+
+.font-large{
+    font-size: 4em;
+}
+.font-medium{
+    font-size: 2em;
+}
+.font-small{
+    font-size: 1.2em;
+}
+
+header{
+    padding: 20px;
+    animation: glitch 1s linear infinite;
+}
+
+
+@keyframes glitch{
+    2%,64%{
+      transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(5deg); 
+    }
+  }
+  
+  header:before,
+  header:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  
+  header:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  @keyframes glitchTop{
+    2%,64%{
+      transform: translate(2px,-2px);
+    }
+    4%,60%{
+      transform: translate(-2px,2px);
+    }
+    62%{
+      transform: translate(13px,-1px) skew(-13deg); 
+    }
+  }
+  
+  header:after{
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitchBotom{
+    2%,64%{
+      transform: translate(-2px,0);
+    }
+    4%,60%{
+      transform: translate(-2px,0);
+    }
+    62%{
+      transform: translate(-22px,5px) skew(21deg); 
+    }
+  }
+
+.rock-paper-scissors{
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    gap:5em;
+    flex-wrap: wrap;
+}
+
+/* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+/* IMAGE STYLES */
+[type=radio] + img {
+cursor: pointer;
+transition: height,width .1s ease-out;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+    outline: 3px solid #19376D;
+    padding: 20px;
+    height: 175px;
+    width: 175px;
+    /* box-shadow: 12px 12px 2px 1px #A5D7E8; */
+    box-shadow: 0 0 25px 10px #19376D;
+    border-radius: 5em;
+
+}
+
+img:hover{
+    height: 175px;
+    width: 175px;
+}
+
+footer{
+    background-color: #19376D;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+.colors  {
+    color:#0B2447;
+    color: #19376D;
+    color: #576CBC;
+    color:#A5D7E8;
+}
+
+a{
+    color: #A5D7E8;
+}
+
+a:visited{
+    color: #A5D7E8;
+}
+
